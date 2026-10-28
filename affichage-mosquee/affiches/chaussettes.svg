@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <radialGradient id="bg" cx="25%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#5a1822"/><stop offset=".55" stop-color="#2a0d12"/><stop offset="1" stop-color="#140507"/>
+    </radialGradient>
+    <g id="sock">
+      <!-- chaussette : revers, jambe, pied -->
+      <path d="M0 0H120V215Q120 238 142 246L236 276Q286 292 280 338Q273 382 222 380L70 352Q0 340 0 270Z" fill="#fbf5f2"/>
+      <rect x="0" y="0" width="120" height="46" rx="6" fill="#e8404a"/>
+      <path d="M0 18H120M0 30H120" stroke="#fbf5f2" stroke-width="3" opacity=".55"/>
+      <path d="M0 78H120M0 104H120" stroke="#e8404a" stroke-width="10"/>
+      <path d="M232 274Q290 290 280 340Q272 382 222 380L196 376Q216 330 232 274Z" fill="#e8404a"/>
+      <path d="M0 270Q0 330 52 348L64 300Q22 296 0 250Z" fill="#f4a49b"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#e8404a" stroke-width="1.2" opacity=".08">
+    <rect x="120" y="120" width="96" height="96"/><rect x="120" y="120" width="96" height="96" transform="rotate(45 168 168)"/>
+    <rect x="1080" y="600" width="96" height="96"/><rect x="1080" y="600" width="96" height="96" transform="rotate(45 1128 648)"/>
+  </g>
+
+  <!-- illustration -->
+  <circle cx="320" cy="400" r="270" fill="#e8404a" opacity=".12"/>
+  <circle cx="320" cy="400" r="270" fill="none" stroke="#e8404a" stroke-opacity=".35" stroke-width="2"/>
+  <g transform="translate(150 150) rotate(-8)"><use href="#sock"/></g>
+  <g transform="translate(250 205) rotate(6)" opacity=".96"><use href="#sock"/></g>
+
+  <!-- textes -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="660" y="180" font-size="27" fill="#e8404a" font-weight="600" letter-spacing="2">Camide edep · Bonne conduite</text>
+    <text x="660" y="268" font-size="66" font-weight="700" fill="#fbf5f2">Camiye girerken</text>
+    <text x="660" y="344" font-size="66" font-weight="700" fill="#fbf5f2">çorap giyiniz</text>
+    <text x="660" y="412" font-size="36" fill="#f4a49b">Portez des chaussettes</text>
+    <text x="660" y="456" font-size="36" fill="#f4a49b">en entrant dans la mosquée</text>
+
+    <!-- pied nu barré -->
+    <g transform="translate(660 520)">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#e8404a" stroke-width="5"/>
+      <path d="M36 70C24 70 22 52 27 40C31 31 47 30 50 40C53 52 46 70 36 70Z" fill="#fbf5f2"/>
+      <circle cx="29" cy="26" r="4.5" fill="#fbf5f2"/><circle cx="37" cy="22" r="4" fill="#fbf5f2"/>
+      <circle cx="45" cy="22" r="3.5" fill="#fbf5f2"/><circle cx="51" cy="26" r="3" fill="#fbf5f2"/><circle cx="55" cy="32" r="2.6" fill="#fbf5f2"/>
+      <path d="M13 67L67 13" stroke="#e8404a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="764" y="556" font-size="31" font-weight="600" fill="#fbf5f2">Çıplak ayakla girmeyiniz</text>
+    <text x="764" y="590" font-size="24" fill="#f4a49b">Ne pas entrer pieds nus</text>
+
+    <!-- chaussette validée -->
+    <g transform="translate(660 630)">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#fbf5f2" stroke-opacity=".5" stroke-width="3"/>
+      <g transform="translate(22 14) scale(.13)"><use href="#sock"/></g>
+      <path d="M50 52l8 8 16-18" fill="none" stroke="#7fd18b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="764" y="666" font-size="31" font-weight="600" fill="#fbf5f2">Temizlik ve halılara saygı için</text>
+    <text x="764" y="700" font-size="24" fill="#f4a49b">Par hygiène et respect des tapis</text>
+  </g>
+</svg>

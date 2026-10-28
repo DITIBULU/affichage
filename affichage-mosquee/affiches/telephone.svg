@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <radialGradient id="bg" cx="25%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#5a1822"/><stop offset=".55" stop-color="#2a0d12"/><stop offset="1" stop-color="#140507"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#e8404a" stroke-width="1.2" opacity=".08">
+    <rect x="120" y="120" width="96" height="96"/><rect x="120" y="120" width="96" height="96" transform="rotate(45 168 168)"/>
+    <rect x="1080" y="600" width="96" height="96"/><rect x="1080" y="600" width="96" height="96" transform="rotate(45 1128 648)"/>
+  </g>
+
+  <!-- illustration -->
+  <circle cx="320" cy="400" r="270" fill="#e8404a" opacity=".12"/>
+  <circle cx="320" cy="400" r="270" fill="none" stroke="#e8404a" stroke-opacity=".35" stroke-width="2"/>
+
+  <!-- ondes sonores -->
+  <g fill="none" stroke="#f4a49b" stroke-width="10" stroke-linecap="round">
+    <path d="M178 330q-26 70 0 140"/><path d="M140 300q-42 100 0 200"/>
+    <path d="M462 330q26 70 0 140"/><path d="M500 300q42 100 0 200"/>
+  </g>
+  <!-- smartphone -->
+  <g transform="rotate(-10 320 400)">
+    <rect x="225" y="220" width="190" height="360" rx="30" fill="#fbf5f2"/>
+    <rect x="241" y="262" width="158" height="270" rx="8" fill="#3a1016"/>
+    <rect x="290" y="238" width="60" height="9" rx="4.5" fill="#c4aaa8"/>
+    <circle cx="320" cy="556" r="12" fill="none" stroke="#c4aaa8" stroke-width="4"/>
+    <!-- appel entrant à l'écran -->
+    <circle cx="320" cy="350" r="34" fill="#f4a49b"/>
+    <path d="M300 396h40" stroke="#f4a49b" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="280" cy="480" r="20" fill="#e8404a"/><circle cx="360" cy="480" r="20" fill="#7fd18b"/>
+  </g>
+  <!-- panneau d'interdiction -->
+  <circle cx="320" cy="400" r="215" fill="none" stroke="#e8404a" stroke-width="30"/>
+  <path d="M168 248L472 552" stroke="#e8404a" stroke-width="30" stroke-linecap="round"/>
+
+  <!-- textes -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="660" y="180" font-size="27" fill="#e8404a" font-weight="600" letter-spacing="2">Camide edep · Bonne conduite</text>
+    <text x="660" y="268" font-size="66" font-weight="700" fill="#fbf5f2">Telefonunuzu</text>
+    <text x="660" y="344" font-size="66" font-weight="700" fill="#fbf5f2">kapatınız</text>
+    <text x="660" y="412" font-size="36" fill="#f4a49b">Éteignez votre téléphone ou</text>
+    <text x="660" y="456" font-size="36" fill="#f4a49b">mettez-le en silencieux</text>
+
+    <!-- cloche barrée -->
+    <g transform="translate(660 520)">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#e8404a" stroke-width="5"/>
+      <path d="M24 52V38a16 16 0 0 1 32 0v14l5 6H19z" fill="#fbf5f2"/>
+      <path d="M34 62a6 6 0 0 0 12 0z" fill="#fbf5f2"/>
+      <path d="M13 67L67 13" stroke="#e8404a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="764" y="556" font-size="31" font-weight="600" fill="#fbf5f2">Namazda zil sesi çalmasın</text>
+    <text x="764" y="590" font-size="24" fill="#f4a49b">Aucune sonnerie pendant la prière</text>
+
+    <!-- combiné barré -->
+    <g transform="translate(660 630)">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#e8404a" stroke-width="5"/>
+      <path d="M24 20c4-3 8-2 10 2l4 8c1 3 0 5-2 7l-3 2c2 6 7 11 13 13l2-3c2-2 4-3 7-2l8 4c4 2 5 6 2 10l-3 4c-3 3-8 4-13 2-14-6-25-17-31-31-2-5-1-10 2-13z" fill="#fbf5f2"/>
+      <path d="M13 67L67 13" stroke="#e8404a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="764" y="666" font-size="31" font-weight="600" fill="#fbf5f2">Namaz salonunda konuşmayınız</text>
+    <text x="764" y="700" font-size="24" fill="#f4a49b">Pas d'appels dans la salle de prière</text>
+  </g>
+</svg>

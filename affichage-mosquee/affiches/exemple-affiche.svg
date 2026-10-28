@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#f3ead6"/>
+  <rect x="40" y="40" width="1000" height="1270" fill="none" stroke="#b08a45" stroke-width="6"/>
+  <rect x="64" y="64" width="952" height="1222" fill="none" stroke="#b08a45" stroke-width="2"/>
+  <g transform="translate(540 300)" fill="none" stroke="#1f5a47" stroke-width="5">
+    <rect x="-90" y="-90" width="180" height="180"/>
+    <rect x="-90" y="-90" width="180" height="180" transform="rotate(45)"/>
+    <circle r="40"/>
+  </g>
+  <text x="540" y="560" text-anchor="middle" font-family="Segoe UI, Arial" font-size="40" letter-spacing="8" fill="#b08a45">EXEMPLE D'AFFICHE</text>
+  <text x="540" y="680" text-anchor="middle" font-family="Segoe UI, Arial" font-weight="700" font-size="84" fill="#123a2e">Conférence</text>
+  <text x="540" y="780" text-anchor="middle" font-family="Segoe UI, Arial" font-weight="700" font-size="84" fill="#123a2e">du mois</text>
+  <text x="540" y="900" text-anchor="middle" font-family="Segoe UI, Arial" font-size="44" fill="#3d4f48">Remplacez ce fichier par vos</text>
+  <text x="540" y="960" text-anchor="middle" font-family="Segoe UI, Arial" font-size="44" fill="#3d4f48">propres affiches (JPG ou PNG)</text>
+  <text x="540" y="1180" text-anchor="middle" font-family="Segoe UI, Arial" font-size="36" fill="#b08a45">dossier « affiches »  ·  fichier config.js</text>
+</svg>
