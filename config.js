@@ -77,6 +77,7 @@ window.CONFIG = {
 
   /* ---------- Affiches (images JPG / PNG dans le dossier « affiches ») ---------- */
   affiches: [
+    { fichier: "affiches/sabah-namazi.webp" },
     { fichier: "affiches/chaussettes.svg" },
     { fichier: "affiches/telephone.svg" },
     { fichier: "affiches/exemple-affiche.svg" }
