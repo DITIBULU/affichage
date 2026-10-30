@@ -72,7 +72,9 @@ window.CONFIG = {
 
   /* ---------- Affiches (images JPG / PNG dans le dossier « affiches ») ---------- */
   affiches: [
+    { fichier: "affiches/rangs.svg" },
     { fichier: "affiches/stationnement.svg" },
+    { fichier: "affiches/portes.svg" },
     { fichier: "affiches/sabah-namazi.webp" },
     { fichier: "affiches/chaussettes.svg" },
     { fichier: "affiches/telephone.svg" },
@@ -83,20 +85,6 @@ window.CONFIG = {
   /* ---------- Bonnes conduites · Camide edep ----------
      icone : chaussettes, rangs, parking, telephone, chaussures, devant, voisinage, enfants */
   conduites: [
-    {
-      icone: "rangs",
-      titre: { fr: "Serrez et alignez les rangs", tr: "Safları sık ve düzgün tutunuz" },
-      points: [
-        { fr: "Épaule contre épaule, pied contre pied", tr: "Omuz omuza, ayak ayağa" },
-        { fr: "Complétez d'abord le premier rang", tr: "Önce ön safı tamamlayınız" },
-        { fr: "Alignez-vous sur la ligne du tapis", tr: "Halıdaki çizgiye göre hizalanınız" }
-      ],
-      reference: {
-        fr: "« Égalisez vos rangs, car l'égalisation des rangs fait partie de l'accomplissement de la prière. »",
-        tr: "« Saflarınızı düz tutunuz; çünkü safları düzgün tutmak namazı ikame etmenin bir parçasıdır. »",
-        source: "Al-Bukhârî / Buhârî (723)"
-      }
-    },
     {
       icone: "chaussures",
       titre: { fr: "Chaussures et propreté", tr: "Ayakkabılar ve temizlik" },

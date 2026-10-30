@@ -26,7 +26,7 @@ https://ditibulu.github.io/affichage/ — aucune étape de build.
 - Annonce « don » : retirée pour l'instant, à remettre seulement sur demande.
 - Ne pas réintroduire : diapositives
   « ne pas passer devant une personne qui prie », versions petit format chaussettes /
-  téléphone / stationnement (remplacées par les affiches illustrées).
+  téléphone / stationnement / rangs (remplacées par les affiches illustrées).
 - Style des affiches SVG : reprendre `affiches/stationnement.svg` ou `chaussettes.svg`
   (fond bordeaux, accent rouge #e8404a, texte turc en grand, français en dessous).
 

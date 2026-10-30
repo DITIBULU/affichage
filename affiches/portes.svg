@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <radialGradient id="bg" cx="25%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#5a1822"/><stop offset=".55" stop-color="#2a0d12"/><stop offset="1" stop-color="#140507"/>
+    </radialGradient>
+    <!-- personne vue de face (56 x 146), couleur via fill -->
+    <g id="p">
+      <circle cx="28" cy="15" r="13" fill="#e9c9a8"/>
+      <path d="M14 9a14 9 0 0 1 28 0z" fill="#fbf5f2"/>
+      <path d="M2 50Q2 32 18 31H38Q54 32 54 50V104H2Z"/>
+      <rect x="9" y="102" width="15" height="38" fill="#3a1016"/><rect x="32" y="102" width="15" height="38" fill="#3a1016"/>
+      <ellipse cx="16" cy="142" rx="10" ry="5" fill="#fbf5f2"/><ellipse cx="40" cy="142" rx="10" ry="5" fill="#fbf5f2"/>
+    </g>
+    <!-- porte de mosquée en arc (150 x 236) -->
+    <g id="door">
+      <path d="M0 236V70A75 70 0 0 1 150 70V236Z" fill="#120607" stroke="#d4af6a" stroke-width="7"/>
+      <path d="M8 236V74L30 84V236Z" fill="#5a1822" stroke="#d4af6a" stroke-width="2"/>
+      <path d="M142 236V74L120 84V236Z" fill="#5a1822" stroke="#d4af6a" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+
+  <!-- ===== Scène 1 : correct ===== -->
+  <rect x="40" y="40" width="570" height="350" rx="24" fill="#ffffff" fill-opacity=".04" stroke="#7fd18b" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="82" cy="80" r="20" fill="#7fd18b"/>
+  <path d="M72 80l7 7 13-14" fill="none" stroke="#14301a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="90" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#7fd18b">Doğru <tspan fill="#c9efcf" font-weight="400" font-size="24">· Correct</tspan></text>
+  <rect x="60" y="116" width="530" height="256" rx="12" fill="#3b2629"/>
+  <path d="M60 352H590" stroke="#c4aaa8" stroke-opacity=".5" stroke-width="3"/>
+  <use href="#door" transform="translate(250 120)"/>
+  <!-- une personne passe librement -->
+  <use href="#p" fill="#fbf5f2" transform="translate(301 229) scale(.84)"/>
+  <!-- chemin libre -->
+  <path d="M325 364V376" stroke="#7fd18b" stroke-width="0"/>
+  <g fill="#7fd18b"><path d="M290 150l35-20 35 20z" opacity="0"/></g>
+  <!-- les autres discutent à l'écart -->
+  <use href="#p" fill="#c4aaa8" transform="translate(78 229) scale(.84)"/>
+  <use href="#p" fill="#f4a49b" transform="translate(130 229) scale(.84)"/>
+  <use href="#p" fill="#c4aaa8" transform="translate(470 229) scale(.84)"/>
+  <use href="#p" fill="#f4a49b" transform="translate(522 229) scale(.84)"/>
+  <!-- flèches de passage -->
+  <g fill="none" stroke="#7fd18b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M228 270h-30M206 258l-12 12 12 12"/>
+    <path d="M422 270h30M444 258l12 12-12 12"/>
+  </g>
+
+  <!-- ===== Scène 2 : incorrect ===== -->
+  <rect x="40" y="410" width="570" height="350" rx="24" fill="#ffffff" fill-opacity=".04" stroke="#e8404a" stroke-opacity=".7" stroke-width="3"/>
+  <circle cx="82" cy="450" r="20" fill="#e8404a"/>
+  <path d="M74 442l16 16M90 442l-16 16" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <text x="114" y="460" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#ff7b83">Yanlış <tspan fill="#f4a49b" font-weight="400" font-size="24">· Incorrect</tspan></text>
+  <rect x="60" y="486" width="530" height="256" rx="12" fill="#3b2629"/>
+  <path d="M60 722H590" stroke="#c4aaa8" stroke-opacity=".5" stroke-width="3"/>
+  <use href="#door" transform="translate(250 490)"/>
+  <!-- groupe qui bloque la porte -->
+  <use href="#p" fill="#c4aaa8" transform="translate(240 599) scale(.84)"/>
+  <use href="#p" fill="#fbf5f2" transform="translate(301 594) scale(.84)"/>
+  <use href="#p" fill="#f4a49b" transform="translate(362 599) scale(.84)"/>
+  <!-- bulles de discussion -->
+  <g fill="#fbf5f2">
+    <path d="M232 560h56a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10h-34l-12 10v-10h-10a10 10 0 0 1-10-10v-14a10 10 0 0 1 10-10z"/>
+    <path d="M362 552h56a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10h-10v10l-12-10h-34a10 10 0 0 1-10-10v-14a10 10 0 0 1 10-10z"/>
+  </g>
+  <g fill="#5a1822"><circle cx="248" cy="577" r="4"/><circle cx="260" cy="577" r="4"/><circle cx="272" cy="577" r="4"/>
+    <circle cx="378" cy="569" r="4"/><circle cx="390" cy="569" r="4"/><circle cx="402" cy="569" r="4"/></g>
+  <rect x="230" y="606" width="190" height="122" rx="14" fill="none" stroke="#ff7b83" stroke-width="4" stroke-dasharray="10 7"/>
+  <!-- personne bloquée -->
+  <use href="#p" fill="#fbf5f2" transform="translate(500 599) scale(.84)"/>
+  <g fill="none" stroke="#ff7b83" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M490 650h-50M452 638l-12 12 12 12"/>
+  </g>
+  <g transform="translate(470 610)">
+    <circle r="22" fill="#e8404a"/><path d="M-9-9l18 18M9-9l-18 18" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Textes ===== -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="660" y="104" font-size="26" fill="#e8404a" font-weight="600" letter-spacing="2">Camide edep · Bonne conduite</text>
+    <text x="660" y="184" font-size="62" font-weight="700" fill="#fbf5f2">Kapı önlerinde</text>
+    <text x="660" y="254" font-size="62" font-weight="700" fill="#fbf5f2">beklemeyiniz</text>
+    <text x="660" y="306" font-size="34" fill="#f4a49b">Ne restez pas devant les portes</text>
+
+    <!-- 1. entrées libres -->
+    <g transform="translate(660 360)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <path d="M22 58V30A14 13 0 0 1 50 30V58Z" fill="none" stroke="#fbf5f2" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M36 52V30M28 38l8-8 8 8" fill="none" stroke="#7fd18b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="752" y="392" font-size="29" font-weight="600" fill="#fbf5f2">Giriş ve çıkışları açık bırakınız</text>
+    <text x="752" y="424" font-size="22" fill="#f4a49b">Laissez les entrées et sorties libres</text>
+
+    <!-- 2. discuter à l'écart -->
+    <g transform="translate(660 476)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <path d="M16 22h28a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H30l-8 8v-8h-6a6 6 0 0 1-6-6V28a6 6 0 0 1 6-6z" fill="#fbf5f2"/>
+      <path d="M50 34h4a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6h-2v6l-6-6h-4" fill="none" stroke="#fbf5f2" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+    <text x="752" y="508" font-size="29" font-weight="600" fill="#fbf5f2">Sohbet için kapıdan uzaklaşınız</text>
+    <text x="752" y="540" font-size="22" fill="#f4a49b">Pour discuter, éloignez-vous des portes</text>
+
+    <!-- 3. céder le passage -->
+    <g transform="translate(660 592)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <circle cx="30" cy="18" r="6" fill="#fbf5f2"/>
+      <path d="M30 26v18l-6 14M30 44l6 14M30 32l-8 8M30 32l10 6" fill="none" stroke="#fbf5f2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 38l8 2v20" fill="none" stroke="#fbf5f2" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <text x="752" y="624" font-size="29" font-weight="600" fill="#fbf5f2">Yaşlılara ve çocuklara yol veriniz</text>
+    <text x="752" y="656" font-size="22" fill="#f4a49b">Cédez le passage aux aînés et aux enfants</text>
+
+    <!-- message final -->
+    <rect x="660" y="690" width="580" height="70" rx="16" fill="#e8404a"/>
+    <text x="950" y="722" text-anchor="middle" font-size="24" font-weight="700" fill="#fff">Herkes rahatça girip çıkabilsin</text>
+    <text x="950" y="748" text-anchor="middle" font-size="19" fill="#ffe3df">Que chacun puisse entrer et sortir facilement</text>
+  </g>
+</svg>

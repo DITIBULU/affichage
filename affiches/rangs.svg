@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <radialGradient id="bg" cx="25%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#5a1822"/><stop offset=".55" stop-color="#2a0d12"/><stop offset="1" stop-color="#140507"/>
+    </radialGradient>
+    <!-- fidèle debout en prière, vu de face (56 x 146), couleur via fill -->
+    <g id="p">
+      <circle cx="28" cy="15" r="13" fill="#e9c9a8"/>
+      <path d="M14 9a14 9 0 0 1 28 0z" fill="#fbf5f2"/>
+      <path d="M2 50Q2 32 18 31H38Q54 32 54 50V104H2Z"/>
+      <path d="M12 60H44" stroke="#2a0d12" stroke-opacity=".35" stroke-width="7" stroke-linecap="round"/>
+      <rect x="9" y="102" width="15" height="38" fill="#3a1016"/><rect x="32" y="102" width="15" height="38" fill="#3a1016"/>
+      <ellipse cx="16" cy="142" rx="10" ry="5" fill="#fbf5f2"/><ellipse cx="40" cy="142" rx="10" ry="5" fill="#fbf5f2"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+
+  <!-- ===== Scène 1 : correct ===== -->
+  <rect x="40" y="40" width="570" height="350" rx="24" fill="#ffffff" fill-opacity=".04" stroke="#7fd18b" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="82" cy="80" r="20" fill="#7fd18b"/>
+  <path d="M72 80l7 7 13-14" fill="none" stroke="#14301a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="90" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#7fd18b">Doğru <tspan fill="#c9efcf" font-weight="400" font-size="24">· Correct</tspan></text>
+  <rect x="60" y="116" width="530" height="256" rx="12" fill="#1f5a52"/>
+  <path d="M60 140H590M60 340H590" stroke="#d4af6a" stroke-opacity=".35" stroke-width="2"/>
+  <!-- ligne du rang -->
+  <path d="M70 336H580" stroke="#d4af6a" stroke-width="5"/>
+  <g>
+    <use href="#p" fill="#fbf5f2" transform="translate(73 190)"/>
+    <use href="#p" fill="#c4aaa8" transform="translate(129 190)"/>
+    <use href="#p" fill="#f4a49b" transform="translate(185 190)"/>
+    <use href="#p" fill="#fbf5f2" transform="translate(241 190)"/>
+    <use href="#p" fill="#c4aaa8" transform="translate(297 190)"/>
+    <use href="#p" fill="#f4a49b" transform="translate(353 190)"/>
+    <use href="#p" fill="#fbf5f2" transform="translate(409 190)"/>
+    <use href="#p" fill="#c4aaa8" transform="translate(465 190)"/>
+    <use href="#p" fill="#f4a49b" transform="translate(521 190)"/>
+  </g>
+  <!-- flèches « épaule contre épaule » -->
+  <g fill="#7fd18b">
+    <path d="M178 158l7 8 7-8z"/><path d="M290 158l7 8 7-8z"/><path d="M402 158l7 8 7-8z"/><path d="M514 158l7 8 7-8z"/>
+  </g>
+
+  <!-- ===== Scène 2 : incorrect ===== -->
+  <rect x="40" y="410" width="570" height="350" rx="24" fill="#ffffff" fill-opacity=".04" stroke="#e8404a" stroke-opacity=".7" stroke-width="3"/>
+  <circle cx="82" cy="450" r="20" fill="#e8404a"/>
+  <path d="M74 442l16 16M90 442l-16 16" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <text x="114" y="460" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#ff7b83">Yanlış <tspan fill="#f4a49b" font-weight="400" font-size="24">· Incorrect</tspan></text>
+  <rect x="60" y="486" width="530" height="256" rx="12" fill="#1f5a52"/>
+  <path d="M60 510H590M60 710H590" stroke="#d4af6a" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M70 706H580" stroke="#d4af6a" stroke-width="5"/>
+  <g>
+    <use href="#p" fill="#fbf5f2" transform="translate(76 560)"/>
+    <use href="#p" fill="#c4aaa8" transform="translate(160 546)"/>
+    <use href="#p" fill="#f4a49b" transform="translate(222 572)"/>
+    <use href="#p" fill="#fbf5f2" transform="translate(346 556)"/>
+    <use href="#p" fill="#c4aaa8" transform="translate(408 542)"/>
+    <use href="#p" fill="#f4a49b" transform="translate(512 562)"/>
+  </g>
+  <!-- espaces vides signalés -->
+  <g fill="none" stroke="#ff7b83" stroke-width="4" stroke-dasharray="10 7">
+    <rect x="280" y="536" width="62" height="168" rx="14"/>
+    <rect x="466" y="536" width="44" height="168" rx="14"/>
+  </g>
+  <g transform="translate(311 528)">
+    <circle r="22" fill="#e8404a"/><path d="M-9-9l18 18M9-9l-18 18" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(488 528)">
+    <circle r="22" fill="#e8404a"/><path d="M-9-9l18 18M9-9l-18 18" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Textes ===== -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="660" y="104" font-size="26" fill="#e8404a" font-weight="600" letter-spacing="2">Camide edep · Bonne conduite</text>
+    <text x="660" y="184" font-size="62" font-weight="700" fill="#fbf5f2">Safları sık ve</text>
+    <text x="660" y="254" font-size="62" font-weight="700" fill="#fbf5f2">düzgün tutunuz</text>
+    <text x="660" y="306" font-size="34" fill="#f4a49b">Serrez et alignez les rangs</text>
+
+    <!-- 1. épaule contre épaule -->
+    <g transform="translate(660 360)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <circle cx="26" cy="24" r="7" fill="#fbf5f2"/><circle cx="46" cy="24" r="7" fill="#fbf5f2"/>
+      <path d="M14 56V44q0-8 8-8h8q6 0 6 8v12M36 56V44q0-8 6-8h8q8 0 8 8v12" fill="#fbf5f2"/>
+    </g>
+    <text x="752" y="392" font-size="29" font-weight="600" fill="#fbf5f2">Omuz omuza, ayak ayağa</text>
+    <text x="752" y="424" font-size="22" fill="#f4a49b">Épaule contre épaule, pied contre pied</text>
+
+    <!-- 2. premier rang d'abord -->
+    <g transform="translate(660 476)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <path d="M18 26H54" stroke="#fbf5f2" stroke-width="7" stroke-linecap="round"/>
+      <path d="M18 42H40" stroke="#fbf5f2" stroke-opacity=".45" stroke-width="7" stroke-linecap="round"/>
+      <path d="M18 56H30" stroke="#fbf5f2" stroke-opacity=".25" stroke-width="7" stroke-linecap="round"/>
+      <text x="52" y="60" font-size="22" font-weight="700" fill="#7fd18b">1</text>
+    </g>
+    <text x="752" y="508" font-size="29" font-weight="600" fill="#fbf5f2">Önce ön safı tamamlayınız</text>
+    <text x="752" y="540" font-size="22" fill="#f4a49b">Complétez d'abord le premier rang</text>
+
+    <!-- 3. ligne du tapis -->
+    <g transform="translate(660 592)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <path d="M14 50H58" stroke="#d4af6a" stroke-width="6" stroke-linecap="round"/>
+      <path d="M22 44V24M36 44V24M50 44V24" stroke="#fbf5f2" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <text x="752" y="624" font-size="29" font-weight="600" fill="#fbf5f2">Halıdaki çizgiye hizalanınız</text>
+    <text x="752" y="656" font-size="22" fill="#f4a49b">Alignez-vous sur la ligne du tapis</text>
+
+    <!-- hadis -->
+    <rect x="660" y="690" width="580" height="70" rx="16" fill="#e8404a"/>
+    <text x="950" y="722" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">« Saflarınızı düz tutunuz »</text>
+    <text x="950" y="748" text-anchor="middle" font-size="18" fill="#ffe3df">« Égalisez vos rangs » · Buhârî (723)</text>
+  </g>
+</svg>
