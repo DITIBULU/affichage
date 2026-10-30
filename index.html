@@ -133,6 +133,7 @@ aside{display:flex;flex-direction:column;gap:12px;min-height:0}
 .row .n .tr{font-size:27px}
 .row .a{font-size:36px;font-weight:600;text-align:right}
 .row .i{font-size:30px;color:var(--muted);text-align:right}
+.one .thead,.one .row{grid-template-columns:1fr 170px}.one .row .i{display:none}.one .row .a{font-size:40px}
 .row.sun{height:56px}.row.sun .fr,.row.sun .a{font-size:25px;color:var(--muted);font-weight:400}.row.sun .tr{font-size:23px}
 .row.past{opacity:.45}
 .row.is-next{border-color:var(--accent);background:rgba(var(--glow),.14)}
@@ -187,7 +188,7 @@ footer{position:relative;display:flex;align-items:center;border-top:1px solid va
       <div class="slot" id="slotA"></div><div class="slot" id="slotB"></div>
       <div class="progress"><i id="bar"></i></div>
     </section>
-    <aside>
+    <aside id="aside">
       <div class="next" id="next"></div>
       <div class="thead" id="thead"></div>
       <div class="rows" id="rows"></div>
@@ -313,16 +314,16 @@ function solarTimes(y, m, d, o) {
 var MAIN = ["fajr", "dhuhr", "asr", "maghrib", "isha"];
 var KEYS = ["fajr", "chourouk", "dhuhr", "asr", "maghrib", "isha"];
 var PRIERES = [
-  {k: "fajr", fr: "Fajr", tr: "İmsak", ar: "الفجر", ez: "Sabah Ezanı"},
+  {k: "fajr", fr: "Fajr", tr: "İmsak", ar: "الفجر", ez: "Sabah Namazı"},
   {k: "chourouk", fr: "Chourouk", tr: "Güneş", ar: "الشروق", sun: true},
-  {k: "dhuhr", fr: "Dhuhr", tr: "Öğle", ar: "الظهر", ez: "Öğle Ezanı"},
-  {k: "asr", fr: "Asr", tr: "İkindi", ar: "العصر", ez: "İkindi Ezanı"},
-  {k: "maghrib", fr: "Maghrib", tr: "Akşam", ar: "المغرب", ez: "Akşam Ezanı"},
-  {k: "isha", fr: "Isha", tr: "Yatsı", ar: "العشاء", ez: "Yatsı Ezanı"}
+  {k: "dhuhr", fr: "Dhuhr", tr: "Öğle", ar: "الظهر", ez: "Öğle Namazı"},
+  {k: "asr", fr: "Asr", tr: "İkindi", ar: "العصر", ez: "İkindi Namazı"},
+  {k: "maghrib", fr: "Maghrib", tr: "Akşam", ar: "المغرب", ez: "Akşam Namazı"},
+  {k: "isha", fr: "Isha", tr: "Yatsı", ar: "العشاء", ez: "Yatsı Namazı"}
 ];
 var NOMS = {}; PRIERES.forEach(function (p) { NOMS[p.k] = p; });
 function nomPriere(k, day) {
-  if (k === "dhuhr" && day.vendredi && C.joumoua && C.joumoua.heure) return {fr: "Joumou'a", tr: "Cuma", ar: "الجمعة", ez: "Cuma Ezanı"};
+  if (k === "dhuhr" && day.vendredi && C.joumoua && C.joumoua.heure) return {fr: "Joumou'a", tr: "Cuma", ar: "الجمعة", ez: "Cuma Namazı"};
   return NOMS[k];
 }
 
@@ -359,7 +360,8 @@ function calcDay(y, m, d) {
 var M = C.mosquee || {};
 $("nom").textContent = (TR_FIRST && M.nomTr) || M.nom || "Mosquée";
 $("nomTr").textContent = M.nomTr ? (TR_FIRST ? M.nom : M.nomTr) : "";
-$("thead").innerHTML = "<span></span><span>" + A("Adhan", "Ezan") + "<br>" + B("Adhan", "Ezan") + "</span><span>" + A("Iqama", "Kamet") + "<br>" + B("Iqama", "Kamet") + "</span>";
+if (C.afficherKamet) $("thead").innerHTML = "<span></span><span>" + A("Adhan", "Ezan") + "<br>" + B("Adhan", "Ezan") + "</span><span>" + A("Iqama", "Kamet") + "<br>" + B("Iqama", "Kamet") + "</span>";
+else { $("aside").classList.add("one"); $("thead").innerHTML = "<span></span><span>" + A("Heure", "Saat") + "<br>" + B("Heure", "Saat") + "</span>"; }
 if (M.logo) $("logo").innerHTML = '<img src="' + esc(M.logo) + '" alt="">'; else $("logo").style.display = "none";
 var gFmt = new Intl.DateTimeFormat("fr-FR", {timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric"});
 var tFmt = new Intl.DateTimeFormat("tr-TR", {timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric"});
@@ -451,8 +453,8 @@ function updateOverlay(t) {
     ov.className = st ? "show " + st.mode : "";
     if (st) {
       var n = nomPriere(st.k, today);
-      if (st.mode === "adhan") ov.innerHTML = '<div class="ov-ar ar">صلاة ' + n.ar + "</div>" + two("Adhan · " + n.fr, n.ez) +
-        '<div class="ov-s">' + A("Iqama dans", "Kamete kalan süre") + " · " + B("Iqama dans", "Kamete kalan süre") + '</div><div class="ov-cd" id="ovcd"></div><div class="ov-tips">' +
+      if (st.mode === "adhan") ov.innerHTML = '<div class="ov-ar ar">صلاة ' + n.ar + "</div>" + two("Prière de " + n.fr, n.ez) +
+        '<div class="ov-s">' + A("Prière dans", "Namaza kalan süre") + " · " + B("Prière dans", "Namaza kalan süre") + '</div><div class="ov-cd" id="ovcd"></div><div class="ov-tips">' +
         chip("Téléphone en silencieux", "Telefonunuzu sessize alınız") + chip("Serrez les rangs", "Safları sık tutunuz") + chip("Complétez le premier rang", "Önce ön safı doldurunuz") + "</div>";
       else if (st.mode === "khutba") ov.innerHTML = '<div class="ov-ar ar">خطبة الجمعة</div>' + two("Khutba du vendredi", "Cuma Hutbesi") +
         '<div class="ov-s">' + A("Prière dans", "Namaza kalan süre") + " · " + B("Prière dans", "Namaza kalan süre") + '</div><div class="ov-cd" id="ovcd"></div><div class="ov-tips">' +

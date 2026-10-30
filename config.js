@@ -31,10 +31,12 @@ window.CONFIG = {
     ishaApresMaghrib: null
   },
 
-  /* Kamet (iqama) : nombre = minutes après l'ezan, heure fixe "HH:MM",
-     ou "gunes-30" = 30 minutes avant Güneş (prière du matin / Sabah namazı) */
-  iqama: { fajr: "gunes-30", dhuhr: 10, asr: 10, maghrib: 5, isha: 10 },
-  ecranAvantKamet: 15,      // l'écran « Kamete kalan süre » apparaît au plus 15 min avant le kamet
+  /* Heure de début de la prière : 0 = à l'heure exacte de l'ezan,
+     nombre = minutes après l'ezan, heure fixe "HH:MM",
+     ou "gunes-30" = 30 minutes avant Güneş (Sabah namazı) */
+  iqama: { fajr: "gunes-30", dhuhr: 0, asr: 0, maghrib: 0, isha: 0 },
+  afficherKamet: false,     // true = afficher une 2e colonne « Kamet » dans le tableau
+  ecranAvantKamet: 15,      // l'écran « Namaza kalan süre » apparaît au plus 15 min avant le début
 
   /* Vendredi : Cuma namazı remplace Öğle */
   joumoua: { heure: "13:30", dureeKhutba: 30 },
@@ -65,14 +67,16 @@ window.CONFIG = {
       details: [ { fr: "Mercredi et samedi", tr: "Çarşamba ve Cumartesi" },
                  { fr: "Salle de cours", tr: "Ders salonu" } ]
       // du: "2026-11-01", au: "2026-12-15"
-    },
-    {
-      etiquette: { fr: "Exemple d'annonce", tr: "Örnek duyuru" },
+    }
+    /* Annonce « don » mise de côté — pour la réactiver, supprimer cette ligne et la ligne de fermeture plus bas
+    ,{
+      etiquette: { fr: "Annonce", tr: "Duyuru" },
       titre: { fr: "Participez à l'entretien de votre mosquée", tr: "Camimizin bakımına katkıda bulununuz" },
       texte: { fr: "Chaque don, même modeste, contribue à l'entretien des locaux et aux activités de la communauté.",
                tr: "Her bağış, küçük de olsa, camimizin bakımına ve cemaatimizin faaliyetlerine katkı sağlar." },
       details: [ { fr: "Tronc à l'entrée", tr: "Girişteki bağış kutusu" } ]
     }
+    */
   ],
 
   /* ---------- Affiches (images JPG / PNG dans le dossier « affiches ») ---------- */
@@ -178,6 +182,8 @@ window.CONFIG = {
       fr: "Les actes ne valent que par les intentions.",
       tr: "Ameller ancak niyetlere göredir.",
       source: "Al-Bukhârî / Buhârî (1), Muslim / Müslim (1907)" },
+    /* Autres hadiths mis de côté (un seul hadith affiché pour l instant).
+       Pour en réactiver, déplacez-les au-dessus de cette ligne.
     { ar: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
       fr: "Ton sourire à ton frère est une aumône.",
       tr: "Kardeşinin yüzüne gülümsemen senin için bir sadakadır.",
@@ -206,5 +212,6 @@ window.CONFIG = {
       fr: "La bonne parole est une aumône.",
       tr: "Güzel söz sadakadır.",
       source: "Al-Bukhârî / Buhârî (2989), Muslim / Müslim (1009)" }
+    */
   ]
 };
