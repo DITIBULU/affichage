@@ -92,14 +92,6 @@ window.CONFIG = {
      icone : chaussettes, rangs, parking, telephone, chaussures, devant, voisinage, enfants */
   conduites: [
     {
-      icone: "chaussettes",
-      titre: { fr: "Portez des chaussettes", tr: "Camiye girerken çorap giyiniz" },
-      points: [
-        { fr: "Ne marchez pas pieds nus dans la salle de prière", tr: "Namaz salonunda çıplak ayakla yürümeyiniz" },
-        { fr: "Par hygiène et par respect des tapis où l'on se prosterne", tr: "Temizlik ve secde edilen halılara saygı için" }
-      ]
-    },
-    {
       icone: "rangs",
       titre: { fr: "Serrez et alignez les rangs", tr: "Safları sık ve düzgün tutunuz" },
       points: [
@@ -126,14 +118,6 @@ window.CONFIG = {
         tr: "« Zarar vermek de, zarara zararla karşılık vermek de yoktur. »",
         source: "Ibn Mâjah / İbn Mâce (2341)"
       }
-    },
-    {
-      icone: "telephone",
-      titre: { fr: "Téléphone en silencieux", tr: "Telefonunuzu sessize alınız" },
-      points: [
-        { fr: "Coupez la sonnerie avant d'entrer dans la salle de prière", tr: "Namaz salonuna girmeden önce zil sesini kapatınız" },
-        { fr: "Une sonnerie trouble le recueillement de tous", tr: "Bir zil sesi tüm cemaatin huşuunu bozar" }
-      ]
     },
     {
       icone: "devant",
