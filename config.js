@@ -68,19 +68,11 @@ window.CONFIG = {
                  { fr: "Salle de cours", tr: "Ders salonu" } ]
       // du: "2026-11-01", au: "2026-12-15"
     }
-    /* Annonce « don » mise de côté — pour la réactiver, supprimer cette ligne et la ligne de fermeture plus bas
-    ,{
-      etiquette: { fr: "Annonce", tr: "Duyuru" },
-      titre: { fr: "Participez à l'entretien de votre mosquée", tr: "Camimizin bakımına katkıda bulununuz" },
-      texte: { fr: "Chaque don, même modeste, contribue à l'entretien des locaux et aux activités de la communauté.",
-               tr: "Her bağış, küçük de olsa, camimizin bakımına ve cemaatimizin faaliyetlerine katkı sağlar." },
-      details: [ { fr: "Tronc à l'entrée", tr: "Girişteki bağış kutusu" } ]
-    }
-    */
   ],
 
   /* ---------- Affiches (images JPG / PNG dans le dossier « affiches ») ---------- */
   affiches: [
+    { fichier: "affiches/stationnement.svg" },
     { fichier: "affiches/sabah-namazi.webp" },
     { fichier: "affiches/chaussettes.svg" },
     { fichier: "affiches/telephone.svg" },
@@ -103,33 +95,6 @@ window.CONFIG = {
         fr: "« Égalisez vos rangs, car l'égalisation des rangs fait partie de l'accomplissement de la prière. »",
         tr: "« Saflarınızı düz tutunuz; çünkü safları düzgün tutmak namazı ikame etmenin bir parçasıdır. »",
         source: "Al-Bukhârî / Buhârî (723)"
-      }
-    },
-    {
-      icone: "parking",
-      titre: { fr: "Garez-vous correctement", tr: "Aracınızı düzgün park ediniz" },
-      points: [
-        { fr: "Ne bloquez jamais un autre véhicule ni une sortie", tr: "Başka bir aracın veya çıkışın önünü kapatmayınız" },
-        { fr: "Respectez les entrées des riverains", tr: "Komşuların giriş kapılarına saygı gösteriniz" },
-        { fr: "Le vendredi, privilégiez la marche ou le covoiturage", tr: "Cuma günü yürüyerek veya araç paylaşarak geliniz" }
-      ],
-      reference: {
-        fr: "« Pas de préjudice, ni de préjudice réciproque. »",
-        tr: "« Zarar vermek de, zarara zararla karşılık vermek de yoktur. »",
-        source: "Ibn Mâjah / İbn Mâce (2341)"
-      }
-    },
-    {
-      icone: "devant",
-      titre: { fr: "Ne passez pas devant une personne qui prie", tr: "Namaz kılanın önünden geçmeyiniz" },
-      points: [
-        { fr: "Contournez-la ou attendez qu'elle ait terminé", tr: "Etrafından dolaşınız veya namazını bitirmesini bekleyiniz" },
-        { fr: "Si vous priez seul, placez-vous devant un mur", tr: "Tek başınıza kılıyorsanız bir duvarın önünde kılınız" }
-      ],
-      reference: {
-        fr: "« Si celui qui passe devant une personne en prière savait ce qu'il encourt, il préférerait attendre quarante plutôt que de passer devant elle. »",
-        tr: "« Namaz kılanın önünden geçen kimse ne kadar günaha girdiğini bilseydi, önünden geçmektense kırk beklemeyi daha hayırlı görürdü. »",
-        source: "Al-Bukhârî / Buhârî (510), Muslim / Müslim (507)"
       }
     },
     {

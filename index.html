@@ -7,8 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="config.js"></script>
-<script src="horaires-officiels.js"></script>
+<script>/* toujours charger la dernière version (pas de cache) */ document.write('<script src="config.js?v=' + Date.now() + '"><\/script><script src="horaires-officiels.js?v=' + Date.now() + '"><\/script>');</script>
 <style>
 :root{
   --bg:#2a0d12; --deep:#0d0405; --panel:rgba(255,255,255,.035); --line:rgba(232,64,74,.28);
@@ -615,6 +614,23 @@ function tick() {
 }
 tick();
 advance();
+
+/* ---------- Mise à jour automatique ----------
+   Toutes les 5 minutes, on regarde si le contenu publié a changé ;
+   si oui, l'écran se recharge tout seul (hors moment de prière). */
+var signature = null;
+function verifierMiseAJour() {
+  if (simOffset || ovKey) return;
+  Promise.all(["index.html", "config.js", "horaires-officiels.js"].map(function (f) {
+    return fetch(f + "?v=" + Date.now(), {cache: "no-store"}).then(function (r) { return r.ok ? r.text() : ""; });
+  })).then(function (t) {
+    var s = t.join("|");
+    if (signature === null) signature = s;
+    else if (s !== signature) location.reload();
+  }).catch(function () { /* hors ligne : on réessaiera */ });
+}
+verifierMiseAJour();
+setInterval(verifierMiseAJour, 5 * 60000);
 })();
 </script>
 </body>

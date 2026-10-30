@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <radialGradient id="bg" cx="25%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#5a1822"/><stop offset=".55" stop-color="#2a0d12"/><stop offset="1" stop-color="#140507"/>
+    </radialGradient>
+    <!-- voiture vue de dessus (64 x 120), couleur donnée par fill sur <use> -->
+    <g id="car">
+      <rect x="-4" y="18" width="7" height="22" rx="3" fill="#120607"/><rect x="61" y="18" width="7" height="22" rx="3" fill="#120607"/>
+      <rect x="-4" y="80" width="7" height="22" rx="3" fill="#120607"/><rect x="61" y="80" width="7" height="22" rx="3" fill="#120607"/>
+      <rect x="0" y="0" width="64" height="120" rx="18"/>
+      <path d="M9 36Q32 25 55 36L51 54H13Z" fill="#2a0d12" opacity=".8"/>
+      <path d="M13 90H51L55 104Q32 113 9 104Z" fill="#2a0d12" opacity=".8"/>
+      <circle cx="13" cy="7" r="4" fill="#ffe9a8"/><circle cx="51" cy="7" r="4" fill="#ffe9a8"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+
+  <!-- ===== Scène 1 : correct ===== -->
+  <rect x="40" y="40" width="570" height="350" rx="24" fill="#ffffff" fill-opacity=".04" stroke="#7fd18b" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="82" cy="80" r="20" fill="#7fd18b"/>
+  <path d="M72 80l7 7 13-14" fill="none" stroke="#14301a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="90" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#7fd18b">Doğru <tspan fill="#c9efcf" font-weight="400" font-size="24">· Correct</tspan></text>
+  <rect x="60" y="116" width="530" height="256" rx="12" fill="#3b2629"/>
+  <g stroke="#fbf5f2" stroke-width="4" stroke-linecap="round">
+    <path d="M80 130V270M190 130V270M300 130V270M410 130V270M520 130V270"/>
+  </g>
+  <use href="#car" fill="#fbf5f2" transform="translate(103 142)"/>
+  <use href="#car" fill="#f4a49b" transform="translate(213 142)"/>
+  <use href="#car" fill="#c4aaa8" transform="translate(433 142)"/>
+  <path d="M80 330H570" stroke="#fbf5f2" stroke-opacity=".35" stroke-width="4" stroke-dasharray="24 18"/>
+
+  <!-- ===== Scène 2 : interdit ===== -->
+  <rect x="40" y="410" width="570" height="350" rx="24" fill="#ffffff" fill-opacity=".04" stroke="#e8404a" stroke-opacity=".7" stroke-width="3"/>
+  <circle cx="82" cy="450" r="20" fill="#e8404a"/>
+  <path d="M74 442l16 16M90 442l-16 16" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <text x="114" y="460" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#ff7b83">Yanlış <tspan fill="#f4a49b" font-weight="400" font-size="24">· Interdit</tspan></text>
+  <rect x="60" y="486" width="530" height="256" rx="12" fill="#3b2629"/>
+  <g stroke="#fbf5f2" stroke-width="4" stroke-linecap="round">
+    <path d="M80 500V630M190 500V630M300 500V630M410 500V630"/>
+  </g>
+  <use href="#car" fill="#fbf5f2" transform="translate(103 508)"/>
+  <use href="#car" fill="#f4a49b" transform="translate(213 508)"/>
+  <use href="#car" fill="#c4aaa8" transform="translate(323 508)"/>
+  <!-- voiture garée en travers qui bloque -->
+  <use href="#car" fill="#e8404a" transform="translate(280 646) rotate(90)"/>
+  <rect x="146" y="636" width="146" height="84" rx="14" fill="none" stroke="#ff7b83" stroke-width="4" stroke-dasharray="12 8"/>
+  <!-- sortie bloquée -->
+  <rect x="470" y="500" width="100" height="130" rx="6" fill="#5a1822" stroke="#f4a49b" stroke-width="3"/>
+  <text x="520" y="574" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#f4a49b">ÇIKIŞ</text>
+  <text x="520" y="598" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f4a49b">Sortie</text>
+  <use href="#car" fill="#e8404a" transform="translate(580 646) rotate(90)"/>
+  <rect x="446" y="636" width="146" height="84" rx="14" fill="none" stroke="#ff7b83" stroke-width="4" stroke-dasharray="12 8"/>
+  <g transform="translate(360 678)">
+    <circle r="30" fill="#e8404a"/><path d="M-12-12l24 24M12-12l-24 24" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Textes ===== -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="660" y="104" font-size="26" fill="#e8404a" font-weight="600" letter-spacing="2">Camide edep · Bonne conduite</text>
+    <text x="660" y="184" font-size="62" font-weight="700" fill="#fbf5f2">Aracınızı doğru</text>
+    <text x="660" y="254" font-size="62" font-weight="700" fill="#fbf5f2">park ediniz</text>
+    <text x="660" y="306" font-size="34" fill="#f4a49b">Garez-vous correctement</text>
+
+    <!-- 1. ne pas bloquer -->
+    <g transform="translate(660 360)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#e8404a" stroke-width="5"/>
+      <use href="#car" fill="#fbf5f2" transform="translate(56 24) rotate(90) scale(.32)"/>
+      <path d="M12 60L60 12" stroke="#e8404a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="752" y="392" font-size="29" font-weight="600" fill="#fbf5f2">Araçların önünü kapatmayınız</text>
+    <text x="752" y="424" font-size="22" fill="#f4a49b">Ne bloquez aucune voiture ni aucune sortie</text>
+
+    <!-- 2. riverains -->
+    <g transform="translate(660 476)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#e8404a" stroke-width="5"/>
+      <path d="M18 38L36 22 54 38M23 34V54H49V34" fill="none" stroke="#fbf5f2" stroke-width="5" stroke-linejoin="round"/>
+      <rect x="31" y="42" width="10" height="12" fill="#fbf5f2"/>
+    </g>
+    <text x="752" y="508" font-size="29" font-weight="600" fill="#fbf5f2">Komşuların girişini kapatmayınız</text>
+    <text x="752" y="540" font-size="22" fill="#f4a49b">Laissez libres les entrées des riverains</text>
+
+    <!-- 3. à pied -->
+    <g transform="translate(660 592)">
+      <circle cx="36" cy="36" r="34" fill="none" stroke="#7fd18b" stroke-width="5"/>
+      <circle cx="39" cy="17" r="6" fill="#fbf5f2"/>
+      <path d="M37 26L31 42 38 48 36 60M31 42L26 58M33 31L44 38 50 34M34 31L24 36" fill="none" stroke="#fbf5f2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="752" y="624" font-size="29" font-weight="600" fill="#fbf5f2">Yürüyerek veya ortak araçla geliniz</text>
+    <text x="752" y="656" font-size="22" fill="#f4a49b">Venez à pied ou en covoiturage</text>
+
+    <!-- message final -->
+    <rect x="660" y="690" width="580" height="70" rx="16" fill="#e8404a"/>
+    <text x="950" y="725" text-anchor="middle" font-size="25" font-weight="700" fill="#fff">Komşularımızı rahatsız etmeyelim</text>
+    <text x="950" y="750" text-anchor="middle" font-size="19" fill="#ffe3df">Respectons nos voisins</text>
+  </g>
+</svg>
