@@ -1,6 +1,7 @@
 /* =====================================================================
    HORAIRES OFFICIELS DIYANET — MONTARGIS · RESMÎ NAMAZ VAKİTLERİ
    Source : namazvakitleri.diyanet.gov.tr (Montargis, n° 13328)
+   Mis à jour automatiquement chaque semaine (outils/maj_horaires_diyanet.py).
    Ces horaires sont prioritaires sur le calcul automatique.
    Pour les jours absents de cette liste, l'écran calcule lui-même.
    Ordre : İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı
