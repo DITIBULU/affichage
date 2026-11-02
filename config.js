@@ -79,7 +79,7 @@ window.CONFIG = {
     { fichier: "affiches/sabah-namazi.webp" },
     { fichier: "affiches/chaussettes.svg" },
     { fichier: "affiches/telephone.svg" },
-    { fichier: "affiches/exemple-affiche.svg" }
+    { fichier: "affiches/exemple-affiche.svg", actif: false }   // remplacée par Sabah Namazı comme exemple
     // { fichier: "affiches/kermesse.jpg", du: "2026-11-01", au: "2026-11-20" }
   ],
 
