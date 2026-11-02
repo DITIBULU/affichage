@@ -46,6 +46,7 @@ window.CONFIG = {
 
   durees: { annonces: 15, conduites: 18, hadiths: 20, affiches: 12, meteo: 12 },
   meteoToutesLes: 6,
+  hadithToutesLes: 5,       // le hadis revient toutes les 5 diapositives
 
   /* ---------- Bandeau défilant ---------- */
   bandeau: [

@@ -554,18 +554,25 @@ function renderSlide(s) {
 
 var CATS = ["annonces", "conduites", "hadiths", "affiches"], catPtr = 0, idx = {}, shown = 0;
 function active(it) { return it.actif !== false && (!it.du || todayKey >= it.du) && (!it.au || todayKey <= it.au); }
+function pick(cat) {
+  var list = (C[cat] || []).filter(active);
+  if (!list.length) return null;
+  idx[cat] = (idx[cat] || 0) % list.length;
+  var it = list[idx[cat]++], def = {type: cat};
+  for (var k in it) def[k] = it[k];
+  return def;
+}
 function nextDef() {
   shown++;
   if (wx && C.meteoToutesLes && shown % C.meteoToutesLes === 0) return {type: "meteo"};
-  for (var n = 0; n < CATS.length; n++) {
-    var cat = CATS[catPtr++ % CATS.length], list = (C[cat] || []).filter(active);
-    if (!list.length) continue;
-    idx[cat] = (idx[cat] || 0) % list.length;
-    var it = list[idx[cat]++], def = {type: cat};
-    for (var k in it) def[k] = it[k];
-    return def;
+  /* le hadis revient à intervalle fixe (hadithToutesLes) au lieu de passer à chaque tour */
+  if (C.hadithToutesLes && shown % C.hadithToutesLes === 0) { var h = pick("hadiths"); if (h) return h; }
+  var cats = C.hadithToutesLes ? CATS.filter(function (c) { return c !== "hadiths"; }) : CATS;
+  for (var n = 0; n < cats.length; n++) {
+    var def = pick(cats[catPtr++ % cats.length]);
+    if (def) return def;
   }
-  return wx ? {type: "meteo"} : null;
+  return pick("hadiths") || (wx ? {type: "meteo"} : null);
 }
 var slot = 0, timer = null, fails = 0;
 function advance() {
