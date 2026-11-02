@@ -10,8 +10,8 @@ https://ditibulu.github.io/affichage/ — aucune étape de build.
 - `index.html` : l'application (mise en page, calcul des horaires, rotation). À ne modifier
   que pour un changement de présentation.
 - `horaires-officiels.js` : horaires officiels **Diyanet** pour Montargis (n° 13328 sur
-  namazvakitleri.diyanet.gov.tr), prioritaires sur le calcul. Contient toute l année 2026 :
-  à compléter avec l année suivante dès que Diyanet la publie.
+  namazvakitleri.diyanet.gov.tr), prioritaires sur le calcul. Mis à jour automatiquement
+  chaque lundi par `.github/workflows/horaires-diyanet.yml` (script `outils/`).
   Ordre : İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı.
 - `affiches/` : images affichées en plein cadre (JPG, PNG, WEBP, SVG), listées dans
   `config.affiches`. Format idéal : paysage 1280×800 ; le portrait est accepté.
@@ -24,6 +24,7 @@ https://ditibulu.github.io/affichage/ — aucune étape de build.
   commence à l'heure affichée. Exception : Sabah namazı = Güneş − 30 min (`iqama.fajr: "gunes-30"`).
 - Hadiths et versets : faire valider par l'imam ; toujours indiquer la source.
 - Tout élément peut être désactivé sans être supprimé avec `actif: false`.
+- Veille de nuit : `config.veille` (écran noir, ou télé éteinte via Fully Kiosk `fully.turnScreenOff`).
 - Rotation : liste simple, chaque diapositive une fois par tour, dans l ordre `config.ordre`.
 - Affiches d'événements datés : ajouter `du` / `au` (format `AAAA-MM-JJ`) pour qu'elles
   disparaissent seules après l'événement.

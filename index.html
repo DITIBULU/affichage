@@ -167,6 +167,7 @@ footer{position:relative;display:flex;align-items:center;border-top:1px solid va
 #overlay.priere .ov-t{font-size:42px;color:rgba(251,245,242,.45);font-weight:400}
 #overlay.priere .ov-tr{font-size:38px;color:rgba(244,164,155,.45);font-weight:400}
 #overlay.priere .ov-clock{font-size:58px;color:rgba(251,245,242,.3);margin-top:30px;font-variant-numeric:tabular-nums}
+#veille{position:absolute;inset:0;z-index:40;background:#000;display:none;cursor:none}
 </style>
 </head>
 <body>
@@ -196,6 +197,7 @@ footer{position:relative;display:flex;align-items:center;border-top:1px solid va
   </main>
   <footer><div class="tl">Infos</div><div class="ticker"><div id="tick"></div></div></footer>
   <div id="overlay"></div>
+  <div id="veille"></div>
 </div>
 
 <script>
@@ -617,6 +619,29 @@ document.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") 
   $("tick").style.animationDuration = Math.max(40, $("tick").textContent.length * 0.11) + "s";
 })();
 
+/* ---------- Veille de nuit ----------
+   Entre la fin de Yatsı (+ apresYatsi min) et İmsak (− avantImsak min), l'écran devient noir.
+   Si la page tourne dans Fully Kiosk Browser (Android / Google TV) avec l'interface JavaScript
+   activée, l'écran de la télé est réellement éteint puis rallumé. */
+var enVeille = null;
+function veilleState(t) {
+  var v = C.veille;
+  if (!v || !v.actif) return false;
+  var debut = today.iqama.isha + finPriere("isha") + val(v.apresYatsi, 30) * 60000;
+  var finMatin = today.adhan.fajr - val(v.avantImsak, 30) * 60000;
+  var finSoir = tomorrow.adhan.fajr - val(v.avantImsak, 30) * 60000;
+  return t < finMatin || (t >= debut && t < finSoir);
+}
+function updateVeille(t) {
+  var v = veilleState(t);
+  if (v === enVeille) return;
+  enVeille = v;
+  $("veille").style.display = v ? "block" : "none";
+  try {
+    if (window.fully) { if (v) fully.turnScreenOff(true); else fully.turnScreenOn(); }
+  } catch (e) { /* pas de Fully Kiosk : l'écran reste simplement noir */ }
+}
+
 /* ---------- Boucle principale ---------- */
 function tick() {
   var t = now(), z = zoned(t);
@@ -625,6 +650,7 @@ function tick() {
   $("ss").textContent = pad(z.s);
   updatePrayers(t);
   updateOverlay(t);
+  updateVeille(t);
   if (!simOffset && z.h === 3 && z.mi === 30 && z.s === 0) recharger();
   setTimeout(tick, 1000 - (Date.now() % 1000) + 5);
 }

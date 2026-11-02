@@ -46,6 +46,11 @@ window.CONFIG = {
   hijriAjustement: 0,       // décaler la date hégirienne de +1 / -1 jour si besoin
 
   durees: { annonces: 15, conduites: 18, hadiths: 20, affiches: 12, meteo: 12 },
+  /* Veille de nuit : écran noir (ou télé éteinte avec Fully Kiosk) de la fin de Yatsı jusqu avant İmsak.
+     apresYatsi = minutes après la fin de l écran de prière de Yatsı, avantImsak = minutes avant İmsak.
+     À désactiver pendant le Ramadan (teravih, sahur). */
+  veille: { actif: false, apresYatsi: 30, avantImsak: 30 },
+
   /* Ordre de passage : chaque diapositive passe une fois par tour, dans cet ordre */
   ordre: ["annonces", "affiches", "hadiths", "conduites", "meteo"],
 
