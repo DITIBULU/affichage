@@ -381,13 +381,19 @@ function renderDates(ts) {
 
 /* ---------- Tableau des horaires ---------- */
 var today, tomorrow, todayKey = "", nextKey = "";
-function renderRows() {
+/* Le soir, une fois l'écran de prière de Yatsı terminé, le tableau montre déjà les horaires du lendemain */
+function finPriere(k) {
+  var d = C.dureeEcranPriere;
+  return val(typeof d === "object" && d ? d[k] : d, 10) * 60000;
+}
+function renderRows(day) {
+  day = day || today;
   $("rows").innerHTML = PRIERES.map(function (p) {
-    var n = nomPriere(p.k, today);
+    var n = nomPriere(p.k, day);
     return '<div class="row' + (p.sun ? " sun" : "") + '" data-k="' + p.k + '"><div class="n"><span class="fr">' + A(n.fr, n.tr) +
       '</span><span class="tr">' + B(n.fr, n.tr) + '</span>' +
-      (p.sun && today.iqama.fajr !== today.adhan.fajr ? '<span class="sb">Sabah ' + hm(today.iqama.fajr) + '</span>' : '') + '</div><div class="a">' + hm(today.adhan[p.k]) +
-      '</div><div class="i">' + (p.sun ? "" : hm(today.iqama[p.k])) + "</div></div>";
+      (p.sun && day.iqama.fajr !== day.adhan.fajr ? '<span class="sb">Sabah ' + hm(day.iqama.fajr) + '</span>' : '') + '</div><div class="a">' + hm(day.adhan[p.k]) +
+      '</div><div class="i">' + (p.sun ? "" : hm(day.iqama[p.k])) + "</div></div>";
   }).join("");
   var j = C.joumoua && C.joumoua.heure;
   $("jumua").style.display = j ? "" : "none";
@@ -412,9 +418,12 @@ function countdown(ms) {
   return pad(m) + ":" + pad(s % 60);
 }
 function updatePrayers(t) {
-  var nx = nextPrayer(t), key = nx.k + (nx.demain ? "+" : "");
+  var nx = nextPrayer(t);
+  var soir = nx.demain && t >= today.iqama.isha + finPriere("isha");   // tableau du lendemain
+  var key = nx.k + (nx.demain ? "+" : "") + (soir ? "s" : "");
   if (key !== nextKey) {
     nextKey = key;
+    renderRows(soir ? tomorrow : today);
     var n = nomPriere(nx.k, nx.day);
     $("next").innerHTML = '<div class="lbl"><span>' + A("Prochaine prière", "Sonraki vakit") + " · " + B("Prochaine prière", "Sonraki vakit") + "</span><span>" +
       (nx.demain ? A("demain", "yarın") + " · " + B("demain", "yarın") : "") +
@@ -423,8 +432,8 @@ function updatePrayers(t) {
     var rows = $("rows").children;
     for (var i = 0; i < rows.length; i++) {
       var k = rows[i].getAttribute("data-k");
-      rows[i].classList.toggle("is-next", !nx.demain && k === nx.k);
-      rows[i].classList.toggle("past", nx.demain || today.adhan[k] < nx.t && k !== nx.k);
+      rows[i].classList.toggle("is-next", (soir || !nx.demain) && k === nx.k);
+      rows[i].classList.toggle("past", !soir && (nx.demain || today.adhan[k] < nx.t && k !== nx.k));
     }
   }
   $("cd").textContent = countdown(nx.t - t);
