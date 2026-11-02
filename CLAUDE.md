@@ -9,7 +9,9 @@ https://ditibulu.github.io/affichage/ — aucune étape de build.
   bonnes conduites, bandeau, réglages des horaires, Cuma).
 - `index.html` : l'application (mise en page, calcul des horaires, rotation). À ne modifier
   que pour un changement de présentation.
-- `horaires-officiels.js` : horaires officiels DITIB facultatifs (prioritaires sur le calcul).
+- `horaires-officiels.js` : horaires officiels **Diyanet** pour Montargis (n° 13328 sur
+  namazvakitleri.diyanet.gov.tr), prioritaires sur le calcul. Contient toute l année 2026 :
+  à compléter avec l année suivante dès que Diyanet la publie.
   Ordre : İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı.
 - `affiches/` : images affichées en plein cadre (JPG, PNG, WEBP, SVG), listées dans
   `config.affiches`. Format idéal : paysage 1280×800 ; le portrait est accepté.
