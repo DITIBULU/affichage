@@ -435,12 +435,13 @@ var ovKey = "";
 function chip(fr, tr) { return "<span>" + A(fr, tr) + "<small>" + B(fr, tr) + "</small></span>"; }
 function two(fr, tr) { return '<div class="ov-t">' + A(fr, tr) + '</div><div class="ov-tr">' + B(fr, tr) + "</div>"; }
 function overlayState(t) {
-  var fin = val(C.dureeEcranPriere, 10) * 60000;
+  var d = C.dureeEcranPriere;   // un nombre, ou une durée par prière { fajr: 20, dhuhr: 30, … }
   for (var i = 0; i < MAIN.length; i++) {
     var k = MAIN[i], q = today.iqama[k];
     /* l'écran d'attente ne s'affiche que dans les dernières minutes avant le kamet */
     var a = Math.max(today.adhan[k], q - val(C.ecranAvantKamet, 15) * 60000);
     if (t >= a && t < q) return {mode: k === "dhuhr" && today.vendredi && C.joumoua && C.joumoua.heure ? "khutba" : "adhan", k: k, q: q};
+    var fin = val(typeof d === "object" && d ? d[k] : d, 10) * 60000;
     if (t >= q && t < q + fin) return {mode: "priere", k: k};
   }
   return null;

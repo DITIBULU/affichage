@@ -41,7 +41,8 @@ window.CONFIG = {
   /* Vendredi : Cuma namazı remplace Öğle */
   joumoua: { heure: "13:30", dureeKhutba: 30 },
 
-  dureeEcranPriere: 10,     // minutes d'écran « Prière en cours » après le kamet
+  /* Durée de l écran « Namaz kılınıyor / Prière en cours », en minutes, à partir du début de la prière */
+  dureeEcranPriere: { fajr: 20, dhuhr: 30, asr: 20, maghrib: 25, isha: 25 },
   hijriAjustement: 0,       // décaler la date hégirienne de +1 / -1 jour si besoin
 
   durees: { annonces: 15, conduites: 18, hadiths: 20, affiches: 12, meteo: 12 },
