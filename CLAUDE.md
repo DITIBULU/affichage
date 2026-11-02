@@ -21,6 +21,7 @@ https://ditibulu.github.io/affichage/ — aucune étape de build.
 - Une seule heure par prière (pas de colonne Kamet, `afficherKamet: false`) ; la prière
   commence à l'heure affichée. Exception : Sabah namazı = Güneş − 30 min (`iqama.fajr: "gunes-30"`).
 - Hadiths et versets : faire valider par l'imam ; toujours indiquer la source.
+- Tout élément peut être désactivé sans être supprimé avec `actif: false`.
 - Affiches d'événements datés : ajouter `du` / `au` (format `AAAA-MM-JJ`) pour qu'elles
   disparaissent seules après l'événement.
 - Annonce « don » : retirée pour l'instant, à remettre seulement sur demande.

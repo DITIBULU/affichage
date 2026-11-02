@@ -60,6 +60,7 @@ window.CONFIG = {
      du / au (facultatifs) : l'annonce n'apparaît qu'entre ces dates.       */
   annonces: [
     {
+      actif: false,   // désactivée — mettre true pour la réafficher
       etiquette: { fr: "Exemple d'annonce", tr: "Örnek duyuru" },
       titre: { fr: "Cours de Coran pour les enfants", tr: "Çocuklar için Kur'an kursu" },
       texte: { fr: "Les inscriptions sont ouvertes. Renseignez-vous après la prière.",
@@ -86,6 +87,7 @@ window.CONFIG = {
      icone : chaussettes, rangs, parking, telephone, chaussures, devant, voisinage, enfants */
   conduites: [
     {
+      actif: false,   // désactivée — mettre true pour la réafficher
       icone: "chaussures",
       titre: { fr: "Chaussures et propreté", tr: "Ayakkabılar ve temizlik" },
       points: [
@@ -95,6 +97,7 @@ window.CONFIG = {
       ]
     },
     {
+      actif: false,   // désactivée — mettre true pour la réafficher
       icone: "voisinage",
       titre: { fr: "Respectez le voisinage", tr: "Komşularımıza saygılı olalım" },
       points: [
@@ -103,6 +106,7 @@ window.CONFIG = {
       ]
     },
     {
+      actif: false,   // désactivée — mettre true pour la réafficher
       icone: "enfants",
       titre: { fr: "Accompagnez vos enfants", tr: "Çocuklarınıza eşlik ediniz" },
       points: [

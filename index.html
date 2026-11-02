@@ -553,7 +553,7 @@ function renderSlide(s) {
 }
 
 var CATS = ["annonces", "conduites", "hadiths", "affiches"], catPtr = 0, idx = {}, shown = 0;
-function active(it) { return (!it.du || todayKey >= it.du) && (!it.au || todayKey <= it.au); }
+function active(it) { return it.actif !== false && (!it.du || todayKey >= it.du) && (!it.au || todayKey <= it.au); }
 function nextDef() {
   shown++;
   if (wx && C.meteoToutesLes && shown % C.meteoToutesLes === 0) return {type: "meteo"};
