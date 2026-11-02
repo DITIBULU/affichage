@@ -614,7 +614,7 @@ function tick() {
   $("ss").textContent = pad(z.s);
   updatePrayers(t);
   updateOverlay(t);
-  if (!simOffset && z.h === 3 && z.mi === 30 && z.s === 0) location.reload();
+  if (!simOffset && z.h === 3 && z.mi === 30 && z.s === 0) recharger();
   setTimeout(tick, 1000 - (Date.now() % 1000) + 5);
 }
 tick();
@@ -623,6 +623,8 @@ advance();
 /* ---------- Mise à jour automatique ----------
    Toutes les 5 minutes, on regarde si le contenu publié a changé ;
    si oui, l'écran se recharge tout seul (hors moment de prière). */
+/* recharge en contournant le cache du navigateur */
+function recharger() { location.replace(location.pathname + "?v=" + Date.now()); }
 var signature = null;
 function verifierMiseAJour() {
   if (simOffset || ovKey) return;
@@ -631,7 +633,7 @@ function verifierMiseAJour() {
   })).then(function (t) {
     var s = t.join("|");
     if (signature === null) signature = s;
-    else if (s !== signature) location.reload();
+    else if (s !== signature) recharger();
   }).catch(function () { /* hors ligne : on réessaiera */ });
 }
 verifierMiseAJour();
