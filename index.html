@@ -130,6 +130,7 @@ aside{display:flex;flex-direction:column;gap:12px;min-height:0}
 .row .n{display:flex;align-items:baseline;gap:14px}
 .row .n .fr{font-size:31px;font-weight:500}
 .row .n .tr{font-size:27px}
+.row .n .sb{margin-left:auto;font-size:24px;font-weight:600;color:var(--accent2);background:rgba(var(--glow),.18);border:1px solid rgba(var(--glow),.45);border-radius:10px;padding:2px 10px;white-space:nowrap}
 .row .a{font-size:36px;font-weight:600;text-align:right}
 .row .i{font-size:30px;color:var(--muted);text-align:right}
 .one .thead,.one .row{grid-template-columns:1fr 170px}.one .row .i{display:none}.one .row .a{font-size:40px}
@@ -384,7 +385,8 @@ function renderRows() {
   $("rows").innerHTML = PRIERES.map(function (p) {
     var n = nomPriere(p.k, today);
     return '<div class="row' + (p.sun ? " sun" : "") + '" data-k="' + p.k + '"><div class="n"><span class="fr">' + A(n.fr, n.tr) +
-      '</span><span class="tr">' + B(n.fr, n.tr) + '</span></div><div class="a">' + hm(today.adhan[p.k]) +
+      '</span><span class="tr">' + B(n.fr, n.tr) + '</span>' +
+      (p.sun && today.iqama.fajr !== today.adhan.fajr ? '<span class="sb">Sabah ' + hm(today.iqama.fajr) + '</span>' : '') + '</div><div class="a">' + hm(today.adhan[p.k]) +
       '</div><div class="i">' + (p.sun ? "" : hm(today.iqama[p.k])) + "</div></div>";
   }).join("");
   var j = C.joumoua && C.joumoua.heure;
