@@ -1,4 +1,4 @@
-# Affichage TV — DITIB Montargis Camii
+# Affichage TV — DİTİB Ulu Camii (Montargis)
 
 Écran d'information diffusé en boucle sur la télé de la mosquée DITIB de Montargis.
 Site statique publié par GitHub Pages depuis la branche `main` (racine) :

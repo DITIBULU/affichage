@@ -11,7 +11,7 @@ window.CONFIG = {
 
   mosquee: {
     nom: "Mosquée DITIB de Montargis",
-    nomTr: "DITIB Montargis Camii",
+    nomTr: "DİTİB Ulu Camii",
     ville: "Montargis",
     logo: "logo.jpg"
   },
