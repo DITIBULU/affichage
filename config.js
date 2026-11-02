@@ -45,8 +45,8 @@ window.CONFIG = {
   hijriAjustement: 0,       // décaler la date hégirienne de +1 / -1 jour si besoin
 
   durees: { annonces: 15, conduites: 18, hadiths: 20, affiches: 12, meteo: 12 },
-  meteoToutesLes: 6,
-  hadithToutesLes: 13,      // le hadis revient toutes les 13 diapositives (éviter un multiple de meteoToutesLes)
+  /* Ordre de passage : chaque diapositive passe une fois par tour, dans cet ordre */
+  ordre: ["annonces", "affiches", "hadiths", "conduites", "meteo"],
 
   /* ---------- Bandeau défilant ---------- */
   bandeau: [
