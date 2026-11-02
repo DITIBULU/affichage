@@ -10,8 +10,8 @@ window.CONFIG = {
   languePrincipale: "tr",   // "tr" = turc en grand, français en dessous · "fr" = l'inverse
 
   mosquee: {
-    nom: "Mosquée DITIB de Montargis",
-    nomTr: "DİTİB Ulu Camii",
+    nom: "Grande Mosquée DITIB de Montargis",
+    nomTr: "DİTİB ULU Camii",
     ville: "Montargis",
     logo: "logo.jpg"
   },
