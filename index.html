@@ -337,7 +337,7 @@ function calcDay(y, m, d) {
   var base = Date.UTC(y, m - 1, d);
   var out = {vendredi: new Date(base).getUTCDay() === 5, adhan: {}, iqama: {}};
   var off = OFFICIELS[y + "-" + pad(m) + "-" + pad(d)];
-  if (off && off.length === 6) {
+  if (off && off.length >= 6) {
     KEYS.forEach(function (k, i) { var p = off[i].split(":"); out.adhan[k] = localTime(y, m, d, +p[0], +p[1]); });
     out.officiel = true;
   } else {
@@ -370,10 +370,16 @@ else { $("aside").classList.add("one"); $("thead").innerHTML = "<span></span><sp
 if (M.logo) $("logo").innerHTML = '<img src="' + esc(M.logo) + '" alt="">'; else $("logo").style.display = "none";
 var gFmt = new Intl.DateTimeFormat("fr-FR", {timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric"});
 var tFmt = new Intl.DateTimeFormat("tr-TR", {timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric"});
+/* Date hégirienne : celle de Diyanet (horaires-officiels.js) en priorité ; sinon celle du
+   navigateur, seulement si elle est correcte (le navigateur Silk de la Fire TV se trompe). */
+var MOIS_HICRI = /(Muharrem|Safer|Rebiülevvel|Rebiülahir|Cemaziyelevvel|Cemaziyelahir|Recep|Şaban|Ramazan|Şevval|Zilkade|Zilhicce)/;
 function hijri(ts) {
+  var off = OFFICIELS[dayKey(zoned(ts))];
+  if (off && off[6] && !C.hijriAjustement) return off[6];
   try {
-    return new Intl.DateTimeFormat("tr-TR-u-ca-islamic-umalqura", {timeZone: TZ, day: "numeric", month: "long", year: "numeric"})
+    var h = new Intl.DateTimeFormat("tr-TR-u-ca-islamic-umalqura", {timeZone: TZ, day: "numeric", month: "long", year: "numeric"})
       .format(new Date(ts + (C.hijriAjustement || 0) * 86400000)).replace(/\s*(AH|Hicri|BH)\.?$/i, "");
+    return MOIS_HICRI.test(h) ? h : "";
   } catch (e) { return ""; }
 }
 function renderDates(ts) {

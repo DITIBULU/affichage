@@ -20,7 +20,7 @@ ENTETE = """/* =================================================================
    Mis à jour automatiquement chaque semaine (outils/maj_horaires_diyanet.py).
    Ces horaires sont prioritaires sur le calcul automatique.
    Pour les jours absents de cette liste, l'écran calcule lui-même.
-   Ordre : İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı
+   Ordre : İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı, date hégirienne
    ===================================================================== */
 """
 
@@ -33,17 +33,20 @@ def lire_page():
 
 def extraire(page):
     cellules = [html.unescape(c).strip() for c in re.findall(r"<td[^>]*>([^<]*)</td>", page)]
-    jours, date, heures = {}, None, []
+    jours, date, heures, hicri = {}, None, [], ""
     for c in cellules:
         m = re.match(r"^(\d{2}) (\S+) (\d{4})", c)
         if m and m.group(2) in MOIS:
             date = f"{m.group(3)}-{MOIS.index(m.group(2)) + 1:02d}-{m.group(1)}"
-            heures = []
+            heures, hicri = [], ""
+            continue
+        if date and not heures and not hicri and re.search(r"\d{4}$", c):
+            hicri = c          # date hégirienne Diyanet, ex. « 23 Cemaziyelevvel 1448 »
             continue
         if date and re.fullmatch(r"\d{2}:\d{2}", c):
             heures.append(c)
             if len(heures) == 6:
-                jours.setdefault(date, heures)
+                jours.setdefault(date, heures + ([hicri] if hicri else []))
                 date = None
     return jours
 
@@ -54,7 +57,7 @@ def lire_existant():
             texte = f.read()
     except FileNotFoundError:
         return {}
-    return {d: re.findall(r'"(\d{2}:\d{2})"', h)
+    return {d: re.findall(r'"([^"]*)"', h)
             for d, h in re.findall(r'"(\d{4}-\d{2}-\d{2})":\s*\[([^\]]*)\]', texte)}
 
 
